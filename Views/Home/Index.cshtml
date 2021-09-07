@@ -1,8 +1,58 @@
-﻿@{
+﻿@using System.Globalization
+@{
     ViewData["Title"] = "Home Page";
+    DateTime dt = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-10 ">
+        <div class="tasksToolbar m-2">
+            <div class="tasksToolbar-top">
+                <div class="tasksToolbar-headline">
+                    <div class="tasksToolbar-titleContainer">
+                        <div class="tasksToolbar-titleItem">
+                            <h2 class="listTitle">
+                                <span>Мой день</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="tasksToolbar-subline">
+                        <span class="todayDateHint">
+                            <span class="date">@dt.ToString("dddd", new CultureInfo("ru-Ru")) @DateTime.Now.ToString("M")</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control">
+            <button type="submit" class="btnAddTask"><i class="bi bi-plus-lg"></i></button>
+            <input type="text" class="text" placeholder="Добавить задачу">
+        </div>
+        <div class="tasks">
+            @for (int i = 0;i < 10;i++)
+            {
+                <div class="taskItem border-top border-bottom">
+                    <div class="row m-4">
+                        <div class="CheckBox-Block col-1">
+                            <fieldset class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <button class="taskItem-titleWrapper col-9 text-lg-start">
+                            <span class="taskItem-title">Задача: @(i)</span>
+                            <div class="metaDataInfo"></div>
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>
+

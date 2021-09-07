@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using WebToDo.Models;
 
 namespace WebToDo.Controllers
@@ -22,6 +18,7 @@ namespace WebToDo.Controllers
         {
             return View();
         }
+
 
         public IActionResult Privacy()
         {
