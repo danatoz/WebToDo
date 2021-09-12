@@ -10,10 +10,6 @@ namespace WebToDo.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            //Database.EnsureCreated();
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //    => optionsBuilder.UseNpgsql("Host=localhost;Database=localserver;Username=postgres;Password=root;Timeout=180;Command Timeout=180;");
-
     }
 }
